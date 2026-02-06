@@ -1,5 +1,5 @@
 const express = require('express')
-require('dotenv').config()
+
 const cookieParser = require('cookie-parser')
 const createMsg = require('./controllers/createMsg')
 
