@@ -12,11 +12,12 @@ const createMsg = async (req, res) => {
                     subject: subject,
                     body: htmlContent
                 }
-                const sent = mailSender(mailObj)
+                const sent = await mailSender(mailObj)
                 if (!sent) return res.status(400).json({message: "Request Failed!"})
-                res.status(200).json({success: true})
+                res.status(200).json({success: true, message: 'Email sent successfully'})
             } catch (error) {
                 res.status(500).json({
+                        success: false,
                     message: error.message
                 })
             }
