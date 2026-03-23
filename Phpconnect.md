@@ -9,9 +9,10 @@ curl_setopt_array($ch, [
         'ADS-api-key: ' . getenv('ADS_API_KEY') // fixed getenv usage
     ],
     CURLOPT_POSTFIELDS => json_encode([
-        "email" => $email,
-        "subject" => $subject,
-        "htmlContent" => $htmlContent
+            "senderEmail" => $ALH,
+            "recipientEmail" => $email,
+            "subject" => $subject,
+            "htmlContent" => $htmlContent
     ]),
     CURLOPT_TIMEOUT => 15
 ]);
