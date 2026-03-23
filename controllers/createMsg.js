@@ -3,12 +3,12 @@ const {mailSender} = require('../lib/sendMail')
 const createMsg = async (req, res) => {
         const { email, subject, htmlContent} = req.body
        
-        if(!email || !subject || !htmlContent) return res.status(400).json({message: "Missing required fields"})
+        if(!senderEmail || !recipientEmail || !subject || !htmlContent) return res.status(400).json({message: "Missing required fields"})
             try {           
                 // to send mail 
                 const mailObj = {
-                    mailFrom: `${process.env.ALH_MAIL}`,
-                    mailTo: email,
+                    mailFrom: senderEmail,
+                    mailTo: recipientEmail,
                     subject: subject,
                     body: htmlContent
                 }
