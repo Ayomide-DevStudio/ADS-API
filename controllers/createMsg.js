@@ -1,7 +1,7 @@
 const {mailSender} = require('../lib/sendMail')
 
 const createMsg = async (req, res) => {
-        const { email, subject, htmlContent} = req.body
+        const { senderEmail, recipientEmail, subject, htmlContent} = req.body
        
         if(!senderEmail || !recipientEmail || !subject || !htmlContent) return res.status(400).json({message: "Missing required fields"})
             try {           
