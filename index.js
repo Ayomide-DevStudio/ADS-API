@@ -1,6 +1,7 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const createMsg = require('./controllers/createMsg')
+const msgCreator = require('./controllers/msgcreator')
 
 const app = express()
 
@@ -15,5 +16,6 @@ app.get('/', (req, res) => {
 
 // API routes (DO NOT COMMENT THIS OUT)
 app.use('/api', createMsg)
+app.use('/api', , msgCreator)
 
 module.exports = app
