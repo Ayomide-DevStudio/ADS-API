@@ -7,7 +7,7 @@ const msgCreator = async (req, res) => {
     console.log('HEADERS:', req.headers);
     console.log('BODY:', req.body);
 
-    const { to, subject, html } = req.body || {};
+    const { mailTo, subject, html } = req.body || {};
 
     console.log('PARSED:', {
         to,
@@ -16,12 +16,12 @@ const msgCreator = async (req, res) => {
         htmlType: typeof html
     });
 
-    if (!to || !subject || !html) {
+    if (!mailTo || !subject || !html) {
         return res.status(400).json({
             success: false,
             message: 'Missing required fields',
             received: {
-                hasTo: !!to,
+                hasTo: !!mailTo,
                 hasSubject: !!subject,
                 hasHtml: !!html
             }
