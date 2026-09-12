@@ -1,5 +1,5 @@
 
-const {adsmailSender} = require('../lib/adsmailSender')
+const {adsMailSender} = require('../lib/adsMailSender')
 
 const msgCreator= async (req, res) => {
         const {  to, subject, html} = req.body
@@ -12,7 +12,7 @@ const msgCreator= async (req, res) => {
                     subject: subject,
                     body: html
                 }
-                const sent = await adsmailSender(mailObj)
+                const sent = await adsMailSender(mailObj)
                 if (!sent) return res.status(400).json({message: "Request Failed!"})
                 res.status(200).json({success: true, message: 'Email sent successfully'})
             } catch (error) {
