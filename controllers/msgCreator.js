@@ -10,7 +10,7 @@ const msgCreator= async (req, res) => {
                 const mailObj = {
                     mailTo: to,
                     subject: subject,
-                    body: html
+                    html
                 }
                 const sent = await adsMailSender(mailObj)
                 if (!sent) return res.status(400).json({message: "Request Failed!"})
