@@ -8,4 +8,4 @@ const verifyApiKey = require('../middlewares/verifyMiddleware')
 const mailRoute =  express.Router()
 
 mailRoute 
-    .post('/send', verifyApiKey, msgCreator)
+    .post('/send/mail', verifyApiKey, msgCreator)
