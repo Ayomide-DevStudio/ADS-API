@@ -1,7 +1,7 @@
 
 const express = require('express')
 
-const createMsg =  require('../controllers/createMsg')
+const msgCreator =  require('../controllers/msgCreator')
 const verifyApiKey = require('../middlewares/verifyMiddleware')
 
 
