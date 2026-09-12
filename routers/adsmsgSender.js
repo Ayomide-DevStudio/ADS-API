@@ -5,7 +5,7 @@ const msgCreator =  require('../controllers/msgCreator')
 const verifyApiKey = require('../middlewares/verifyMiddleware')
 
 
-const otpRoute =  express.Router()
+const mailRoute =  express.Router()
 
-otpRoute 
+mailRoute 
     .post('/send', verifyApiKey, createMsg)
