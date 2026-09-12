@@ -2,12 +2,14 @@ const { adsMailSender } = require('../lib/adsmailSender');
 
 const msgCreator = async (req, res) => {
 
+    console.log('===== MAIL API REQUEST =====');
     console.log('METHOD:', req.method);
+    console.log('HEADERS:', req.headers);
     console.log('BODY:', req.body);
 
     const { to, subject, html } = req.body || {};
 
-    console.log('FIELDS:', {
+    console.log('PARSED:', {
         to,
         subject,
         hasHtml: !!html,
@@ -34,7 +36,7 @@ const msgCreator = async (req, res) => {
             html
         };
 
-        console.log('MAIL OBJECT FOR SMTP:', {
+        console.log('SENDING:', {
             mailTo: mailObj.mailTo,
             subject: mailObj.subject,
             hasHtml: !!mailObj.html
@@ -56,7 +58,7 @@ const msgCreator = async (req, res) => {
 
     } catch (error) {
 
-        console.error('msgCreator ERROR:', error);
+        console.error('MAIL API ERROR:', error);
 
         return res.status(500).json({
             success: false,
