@@ -16,6 +16,6 @@ app.get('/', (req, res) => {
 
 // API routes (DO NOT COMMENT THIS OUT)
 app.use('/api', createMsg)
-app.use('/api', , msgCreator)
+app.use('/api', msgCreator)
 
 module.exports = app
