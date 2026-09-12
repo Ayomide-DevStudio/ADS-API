@@ -1,7 +1,7 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
 const createMsg = require('./controllers/createMsg')
-const msgCreator = require('./controllers/msgcreator')
+const msgCreator = require('./controllers/msgCreator')
 
 const app = express()
 
