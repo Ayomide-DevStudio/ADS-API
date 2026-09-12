@@ -1,5 +1,5 @@
 
-const {adsMailSender} = require('../lib/adsMailSender')
+const {adsMailSender} = require('../lib/adsmailSender')
 
 const msgCreator= async (req, res) => {
         const {  to, subject, html} = req.body
