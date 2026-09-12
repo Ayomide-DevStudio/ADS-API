@@ -10,7 +10,7 @@ const msgCreator = async (req, res) => {
     const { mailTo, subject, html } = req.body || {};
 
     console.log('PARSED:', {
-        to,
+        mailTo,
         subject,
         hasHtml: !!html,
         htmlType: typeof html
@@ -31,7 +31,7 @@ const msgCreator = async (req, res) => {
     try {
 
         const mailObj = {
-            mailTo: to,
+            mailTo,
             subject,
             html
         };
