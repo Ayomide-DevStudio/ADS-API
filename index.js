@@ -1,5 +1,6 @@
 const express = require('express')
 const cookieParser = require('cookie-parser')
+
 const createMsg = require('./controllers/createMsg')
 const msgCreator = require('./controllers/msgCreator')
 
@@ -9,12 +10,12 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 
-// Health check route (fixes Cannot GET /)
+// Health check
 app.get('/', (req, res) => {
-  res.send('ADS API is running 🚀')
+    res.send('ADS API is running 🚀')
 })
 
-// API routes (DO NOT COMMENT THIS OUT)
+// API routes
 app.use('/api', createMsg)
 app.use('/api', msgCreator)
 
