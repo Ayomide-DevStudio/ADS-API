@@ -3,9 +3,9 @@ const { adsMailSender } = require('../lib/adsmailSender');
 const msgCreator = async (req, res) => {
     const { to, subject, html } = req.body;
 
-    if (!to || !subject || !html) {
-        return res.status(400).json({ message: "Missing required fields" });
-    }
+    // if (!to || !subject || !html) {
+    //     return res.status(400).json({ message: "Missing required fields" });
+    // }
 
     try {
         const sent = await adsMailSender({ to, subject, html });
