@@ -1,10 +1,13 @@
 const express = require('express')
 
-const adsmailSender =  require('../controllers/msgCreator')
+
 const verifyApiKey = require('../middlewares/verifyMiddleware')
+const createMsg = require('../controllers/createMsg')
 
 
 const otpRoute =  express.Router()
 
 otpRoute 
-    .post('/send', verifyApiKey, adsmailSender)
+    .post('/send', verifyApiKey, createMsg)
+
+module.exports = otpRoute

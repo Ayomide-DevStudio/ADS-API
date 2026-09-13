@@ -9,3 +9,6 @@ const mailRoute =  express.Router()
 
 mailRoute 
     .post('/send/mail', verifyApiKey, msgCreator)
+
+
+module.exports = mailRoute
